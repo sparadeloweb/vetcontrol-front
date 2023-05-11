@@ -1,6 +1,3 @@
-// Manejo de estado
-import { useState } from 'react';
-
 // Iconos para inputs
 import { MdOutlineAlternateEmail } from 'react-icons/md';
 import { RiLockPasswordLine } from 'react-icons/ri';
@@ -17,22 +14,15 @@ import { successNotification, errorNotification } from '../../helpers/notificati
 // Boton Estilado
 import MagicButton from '../Buttons/MagicButton';
 
+// Hook Custom para el manejo de formulario
+import useForm from '../../hooks/useForm';
+
 export default function LoginForm () {
 
-    // Estados para manejar los valores de los inputs
-    const [inputFields, setInputFields] = useState({
+    const {formData, handleInputChange} = useForm({
         email: "",
         password: ""
-    });
-
-    // Funcion encargada de manejar los valores de los inputs
-    const handleInputsChange = (event) => {
-        const {name, value} = event.target;
-        setInputFields(prevState => ({
-            ...prevState,
-            [name]: value
-        }));
-    }
+    })
 
     // Llamo del contexto la función encargada de settear los datos del usuario (no la ejecuto)
     const setUserCredentials = useUserToggleContext();
@@ -40,7 +30,7 @@ export default function LoginForm () {
     // Funcion encargada de hacer petición al backend cuando el usuario clickea en "Iniciar sesion" y accionar
     const handleFormSubmit = async () => {
         try {
-            const loginResponse = await loginHandler(inputFields);
+            const loginResponse = await loginHandler(formData);
 
             if (loginResponse.data.status === 200) {
                 setUserCredentials({
@@ -65,27 +55,27 @@ export default function LoginForm () {
             <form>
                 <div className="login__input mt-0">
                     <MdOutlineAlternateEmail 
-                        className={inputFields.email.length > 0? 'icon-active' : null}
+                        className={formData.email.length > 0? 'icon-active' : null}
                     />
                     <input 
                         type="email"
                         name="email"
                         autoComplete='email'
-                        value={inputFields.email}
-                        onChange={(e) => handleInputsChange(e)}
+                        value={formData.email}
+                        onChange={(e) => handleInputChange(e)}
                         placeholder="Correo electrónico"
                     />
                 </div>
                 <div className="login__input">
                     <RiLockPasswordLine 
-                        className={inputFields.password.length > 0 ? 'icon-active' : null}
+                        className={formData.password.length > 0 ? 'icon-active' : null}
                     />
                     <input 
                         type="password"
                         name="password"
                         autoComplete='current-password'
-                        value={inputFields.password}
-                        onChange={(e) => handleInputsChange(e)}
+                        value={formData.password}
+                        onChange={(e) => handleInputChange(e)}
                         placeholder="Contraseña"
                     />
                 </div>
