@@ -8,6 +8,7 @@
     --blue-medium: #56B4CB;
     --blue-post-medium: #2C7C93;
     --blue-dark: #1B6A8C;
+    --main-blue: #3498db;
     --title-size: 36px;
     --title-weight: 600;
     --subtitle-size: 28px;
@@ -15,9 +16,10 @@
     --toastify-color-success: var(--blue-medium);
 }
 
-/* Fuente a utilizar */
-* {
-    font-family: 'Rubik', sans-serif, Arial;
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 /* Deshabilitamos el background que aplican los navegadores al autocompletar */
@@ -26,6 +28,35 @@ input:-webkit-autofill:hover,
 input:-webkit-autofill:focus, 
 input:-webkit-autofill:active{
     -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
+.main__content {
+    display: flex;
+}
+
+.page__content {
+    padding: 40px;
+    background-color: #121215;
+    width: 100vw;
+    max-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.page__content h1 {
+    color: #f1f1f1;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.page__content h1 a {
+    text-decoration: none;
+    color: white;
+}
+
+.page__content h1 a svg {
+    margin-top: -5px;
+    font-size: 16px;
 }
 
 
@@ -104,10 +135,60 @@ input:-webkit-autofill:active{
 .magic-button .text-span {
     position: relative;
     z-index: 2;
-
     font-weight: 400;
 }
 
+.counter__card {
+    background-color: #1A1C1E;
+    width: 400px;
+    border-radius: 5px;
+    margin-right: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    color: var(--main-blue);
+    font-size: 18px;
+}
+
+.title__quantity {
+    display: flex;
+}
+
+.counter__card .title {
+    font-weight: bold;
+}
+
+.counter__card .total {
+    margin-left: auto;
+}
+
+.counter__card .total span {
+    color: #f1f1f1;
+}
+
+.counter__card .quantity__icon {
+    margin-top: 20px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.counter__card .quantity__icon span {
+    color: #f1f1f1;
+    margin-right: 5px;
+}
+
+.counter__card .quantity__icon .icon__container {
+    padding: 10px;
+    background-color: rgba(41, 156, 219, 0.18);
+    margin-left: auto;
+    border-radius: 5px;
+}
+
+.counter__card .quantity__icon svg {
+    font-size: 22px;
+    margin-top: -3px;
+    margin-left: auto;
+}
 
 /* Definimos animaciones */
 @keyframes background-pan {

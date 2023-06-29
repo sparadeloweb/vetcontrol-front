@@ -1,0 +1,114 @@
+.cards__sections {
+    display: flex; 
+    justify-content: space-between; 
+}
+
+.cards__sections > div {
+    width: 25%; 
+}
+
+.cards__sections.appointments {
+    margin-top: 40px;
+}
+
+.charts__container {
+    display: flex;
+}
+
+.chart__section {
+    background-color: #1A1C1E;
+    height: 400px;
+    color: #F1f1f1;
+    width: 50%;
+    border-radius: 5px;
+    margin-top: 40px;
+    padding: 40px;
+}
+
+.chart__section .chart {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.chart__section h2 {
+    font-size: 18px;
+    text-align: center;
+    font-weight: bold;
+    margin: 0 auto;
+}
+
+.chart__section canvas {
+    height: 80% !important;
+}
+
+/* Dispositivos pequeños (landscape phones, 576px and up) */
+@media (min-width: 470px) {
+    .cards__sections {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .cards__sections .counter__card {
+        width: 100%;
+        margin-top: 20px; 
+        margin-right: 0px;
+    }
+
+    .cards__sections .counter__card:nth-child(1) {
+        margin-top: 0px;
+    }
+
+    .charts__container {
+        flex-direction: column;
+    }
+
+    .chart__section {
+        width: 100%;
+        margin-inline: 0px;
+    }
+
+    .chart__section canvas {
+        width: 70% !important;
+    }
+}
+
+/* Dispositivos extra grandes (large desktops, 1200px y más) */
+@media (min-width: 1200px) { 
+    .cards__sections {
+        flex-wrap: nowrap;
+    }
+
+    .cards__sections .counter__card {
+        width: 25%;
+        margin-right: 20px;
+    }
+
+    .cards__sections .counter__card {
+        margin-top: 0px;
+    }
+
+    .charts__container {
+        flex-direction: row;
+    }
+
+    .chart__section {
+        width: 50%;
+    }
+
+    .charts__container > div:first-child {
+        margin-right: 20px;
+    }
+    
+    .charts__container > div:nth-child(2) {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .chart__section canvas {
+        width: 40% !important;
+    }
+}

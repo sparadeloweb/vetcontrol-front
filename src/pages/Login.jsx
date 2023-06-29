@@ -1,5 +1,5 @@
 // Modificaciones de cabeceras / meta datos (React Helmet)
-import {Helmet} from "react-helmet-async";
+import { Helmet } from "react-helmet-async";
 
 // Componentes
 import LoginMain from "../components/Login/LoginMain";

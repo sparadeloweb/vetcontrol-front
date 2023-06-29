@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+
 // Iconos para inputs
 import { MdOutlineAlternateEmail } from 'react-icons/md';
 import { RiLockPasswordLine } from 'react-icons/ri';
@@ -6,7 +8,7 @@ import { RiLockPasswordLine } from 'react-icons/ri';
 import { loginHandler } from '../../helpers/apiFunctions';
 
 // Contexto de usuario
-import { useUserToggleContext } from '../../contexts/UserProvider';
+import { useUserToggleContext, useUserContext } from '../../contexts/UserProvider';
 
 // Notificaciones
 import { successNotification, errorNotification } from '../../helpers/notifications'
@@ -17,6 +19,9 @@ import MagicButton from '../Buttons/MagicButton';
 // Hook Custom para el manejo de formulario
 import useForm from '../../hooks/useForm';
 
+// Manejo de redirecciones de React Router Dom
+import { useNavigate } from 'react-router-dom';
+
 export default function LoginForm () {
 
     const {formData, handleInputChange} = useForm({
@@ -25,7 +30,18 @@ export default function LoginForm () {
     })
 
     // Llamo del contexto la función encargada de settear los datos del usuario (no la ejecuto)
-    const setUserCredentials = useUserToggleContext();
+    const { setUserCredentials } = useUserToggleContext();
+
+    // Utilizo el hook de React Router Dom para redireccionar en caso de que loguee correctamente
+    const navigate = useNavigate();
+
+    const user = useUserContext();
+
+    useEffect(() => {
+        if (user) {
+            navigate('/');
+        }
+    }, [user, navigate]);
 
     // Funcion encargada de hacer petición al backend cuando el usuario clickea en "Iniciar sesion" y accionar
     const handleFormSubmit = async () => {
@@ -38,11 +54,12 @@ export default function LoginForm () {
                     user: loginResponse.data.user
                 })
                 successNotification(loginResponse.data.message); // Muestro notificacion de exito
+                navigate('/'); // Redirijo al home
             } else {
                 errorNotification(loginResponse.data.message); // Muestro notificacion de fallo
             }
         } catch (e) {
-            console.log(e); // Si falla algo externo muestro el error en consola
+            errorNotification(e); // Si falla algo externo muestro el error en consola
         }
     }
 
@@ -75,7 +92,7 @@ export default function LoginForm () {
                         name="password"
                         autoComplete='current-password'
                         value={formData.password}
-                        onChange={(e) => handleInputChange(e)}
+                        onChange={handleInputChange}
                         placeholder="Contraseña"
                     />
                 </div>

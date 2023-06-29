@@ -19,8 +19,6 @@ export default function SessionChecker ({children}) {
     useEffect(() => {
         if (!user) { // Si no hay usuario
             navigate('/ingresar'); // Redirecciona
-        } else {
-            navigate('/'); // Si no lleva a inicio
         }
     }, [user, navigate]) // Vigila el estado del usuario y la navegación
 

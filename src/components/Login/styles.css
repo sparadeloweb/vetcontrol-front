@@ -5,13 +5,14 @@
 }
 
 .login__container .login__container_left {
-    background-color: white;
+    background-color: #1A1C1E;
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
     align-items: center;
+    color: #f1f1f1;
 }
 
 .login__container .login__container_right {
@@ -71,7 +72,7 @@
 
 .login__input svg {
     font-size: 1.5rem;
-    color: #333;
+    color: #f1f1f1;
     width: 5%;
     transition: .3s all;
 }
@@ -79,14 +80,27 @@
 .login__input input {
     width: 95%;
     border: none;
+    background-color: #1A1C1E;
+    color: #f1f1f1;
+}
+
+.login__input input:-webkit-autofill,
+.login__input input:-webkit-autofill:hover, 
+.login__input input:-webkit-autofill:focus, 
+.login__input input:-webkit-autofill:active{
+    -webkit-background-clip: #1A1C1E;
+    -webkit-text-fill-color: #f1f1f1;
+    transition: background-color 5000s ease-in-out 0s;
+    box-shadow: inset 0 0 20px 20px #1A1C1E !important;
 }
 
 .login__input input::placeholder {
-    color: #444;
+    color: #f1f1f1;
 }
 
 .login__input input:focus {
     outline: none;
+    background-color: #1A1C1E;
 }
 
 .login__buton {

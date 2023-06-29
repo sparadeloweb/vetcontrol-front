@@ -1,5 +1,5 @@
 // Importa las dependencias necesarias
-import { useState, createContext, useContext, useEffect } from "react";
+import { useState, createContext, useContext } from "react";
 import Cookies from "js-cookie"; // Paquete para manejar cookies facilmente
 
 // Define dos contextos, uno para manejar al usuario y otro para la función de seteo de datos

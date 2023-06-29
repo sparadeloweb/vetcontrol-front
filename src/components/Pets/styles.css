@@ -1,0 +1,310 @@
+.pets__container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.pets__container .cards__sections {
+    width: 91%;
+    margin-bottom: 20px;
+    display: flex
+}
+
+.pets__main__table {
+    width: 80%;
+    margin-right: 20px;
+    height: auto;
+    border-radius: 10px;
+    padding: 20px;
+    padding-top: 30px;
+    background-color: #1A1C1E;
+}
+
+.pets__main__table::-webkit-scrollbar {
+    display: none;
+}
+
+.pets__main__table .add__button {
+    background-color: rgba(41, 156, 219, 0.7);
+    color: white;
+    border: none;
+    transition: .3s all;
+    margin-bottom: 20px;
+    padding-inline: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.pets__main__table .add__button:hover {
+    background-color: rgba(41, 156, 219, 0.9);
+    color: #FEFEFF;
+}
+
+.pets__main__table > input {
+    margin-left: 20px;
+    border-radius: 5px;
+    padding: 8px;
+    background-color: #171818;
+    color: white;
+    padding-inline: 15px;
+    border: 1px solid var(--main-blue);
+    width: 250px;
+}
+
+.pets__main__table > input:focus {
+    outline: none;
+}
+
+.pets__main__table table {
+    width: 100%;
+    color: #FEFEFF;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.pets__main__table table tr {
+    display: table;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.pets__main__table table thead {
+    background-color: #171818;
+    border-bottom: 1px solid #FEFEFF;
+}
+
+.pets__main__table table thead th, .pets__main__table table tbody th {
+    padding: 10px;
+    font-size: 16px;
+}
+
+.pets__main__table th, 
+.pets__main__table td {
+    width: 16.66%; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+}
+
+
+.pets__main__table table tbody td button {
+    padding: 0px;
+    border: none;
+    background: none;
+    color: #FEFEFF;
+    margin-inline: 5px;
+    transition: .3s all;
+}
+
+.pets__main__table table .table__body__wrapper {
+    max-height: 400px;
+    width: 100%;
+    margin-top: 5px;
+    height: 400px;
+    overflow-y: scroll;
+}
+
+.pets__main__table table .table__body__wrapper::-webkit-scrollbar {
+    display: none;
+} 
+
+.pets__main__table table thead,
+.pets__main__table table tbody {
+    display: block;
+    width: 100%;
+}
+
+.pets__main__table table tbody td a {
+    color: white;
+    transition: .3s all;
+}
+
+.pets__main__table table tbody td a:hover {
+    color: var(--main-blue);
+}
+
+.pets__main__table table tbody td {
+    padding: 10px 0px 10px 0px;
+}
+
+.pets__main__table table tbody td button:hover {
+    color: var(--main-blue);
+}
+
+.pet__filters {
+    width: 15%;
+    height: auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #1A1C1E;
+    height: auto;
+}
+
+.pet__filter {
+    width: 100%;
+    border-radius: 10px;
+    transition: .3s all;
+    color: #299DDA;
+    background-color: rgba(41, 156, 219, 0.18);
+    margin: 10px 0px 10px 0px;
+    border: none;
+    height: 22%;
+}
+
+.pet__filter svg {
+    margin-right: 10px;
+    margin-top: -5px;
+}
+
+.pet__filter:hover {
+    background-color: rgba(41, 156, 219, 0.7);
+    color: #FEFEFF;
+}
+
+.pet__filter.selected {
+    background-color: rgba(41, 156, 219, 0.7);
+    color: #FEFEFF;
+}
+
+.pets__main__table.add__edit {
+    height: 600px;
+    width: 40%;
+    padding-top: 10px;
+    transition: .3s all;
+}
+
+
+.pets__main__table.add__edit.other__type {
+    height: 700px;
+}
+
+.pets__main__table form, .pets__main__table form label {
+    display: flex;
+    font-size: 16px;
+    flex-direction: column;
+}
+
+.pets__main__table form hr {
+    color: white;
+}
+
+.pets__main__table form label {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.pets__main__table form label input,
+.pets__main__table form label select
+{
+    margin-top: 15px;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+}
+
+.pets__main__table form button {
+    margin-top: 15px;
+    padding: 10px;
+    padding-inline: 15px;
+    background-color: rgba(41, 156, 219, 0.7);
+    color: white;
+    border: none;
+    width: 100%;
+    border-radius: 5px;
+    transition: .3s all;
+}
+
+
+.pets__main__table form button:hover {
+    background-color: rgba(41, 156, 219, 0.9);
+}
+
+/* Dispositivos pequeños (landscape phones, 576px and up) */
+@media (min-width: 470px) { 
+    .pets__main__table {
+        width: 100%;
+        margin-right: 0px;
+    }
+
+    .pets__container .cards__sections {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .pets__container .cards__sections .counter__card {
+        width: 100%;
+        margin-top: 20px; 
+        margin-right: 0px;
+    }
+
+    .pets__container .cards__sections .counter__card:nth-child(1) {
+        margin-top: 0px;
+    }
+
+    .pets__main__table {
+        overflow-x: scroll;
+    }
+
+    .pet__filters {
+        margin-top: 30px;
+        width: 100%;
+    }
+
+    .pet__filters .pet__filter {
+        height: auto;
+        padding: 20px;
+    }
+
+    .pets__main__table.add__edit {
+        width: 100%;
+        
+    }
+
+    .pets__main__table .add__button {
+        display: block;
+    }
+
+    .pets__main__table > input {
+        margin-left: 0px;
+        width: 100%;
+    }
+}
+
+/* Dispositivos extra grandes (large desktops, 1200px y más) */
+@media (min-width: 1200px) { 
+    .pet__filters {
+        width: 15%;
+    }
+
+    .pets__container .cards__sections {
+        flex-wrap: nowrap;
+    }
+
+    .pets__container .cards__sections .counter__card {
+        width: 25%;
+        margin-right: 20px;
+    }
+
+    .pets__main__table {
+        width: 82%;
+        margin-right: 20px;
+    }
+
+    .pet__filters {
+        width: 15%;
+        margin-top: 0px;
+    }
+
+    .pets__container .cards__sections .counter__card {
+        margin-top: 0px;
+    }
+
+    .pet__filters .pet__filter {
+        height: 21.5%;
+    }
+}

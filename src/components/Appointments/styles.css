@@ -1,0 +1,254 @@
+.turnos__container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.turnos__container .cards__sections {
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+}
+
+.turnos__main__table {
+    margin-right: 20px;
+    height: auto;
+    border-radius: 10px;
+    padding: 20px;
+    padding-top: 30px;
+    background-color: #1A1C1E;
+}
+
+.turnos__main__table::-webkit-scrollbar {
+    display: none;
+}
+
+.turnos__main__table .add__button {
+    background-color: rgba(41, 156, 219, 0.7);
+    color: white;
+    border: none;
+    transition: .3s all;
+    margin-bottom: 20px;
+    padding-inline: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.turnos__main__table .add__button:hover {
+    background-color: rgba(41, 156, 219, 0.9);
+    color: #FEFEFF;
+}
+
+.turnos__main__table > input {
+    margin-left: 20px;
+    border-radius: 5px;
+    padding: 8px;
+    background-color: #171818;
+    color: white;
+    padding-inline: 15px;
+    border: 1px solid var(--main-blue);
+    width: 250px;
+}
+
+.turnos__main__table > input:focus {
+    outline: none;
+}
+
+.turnos__main__table table {
+    width: 100%;
+    color: #FEFEFF;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.turnos__main__table table tr {
+    display: table;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.turnos__main__table table thead {
+    background-color: #171818;
+    border-bottom: 1px solid #FEFEFF;
+}
+
+.turnos__main__table table thead th, .turnos__main__table table tbody th {
+    padding: 10px;
+    font-size: 16px;
+}
+
+.turnos__main__table th, 
+.turnos__main__table td {
+    width: 16.66%; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+}
+
+
+.turnos__main__table table tbody td button {
+    padding: 0px;
+    border: none;
+    background: none;
+    color: #FEFEFF;
+    margin-inline: 5px;
+    transition: .3s all;
+}
+
+.turnos__main__table table .table__body__wrapper {
+    max-height: 400px;
+    width: 100%;
+    margin-top: 5px;
+    height: 400px;
+    overflow-y: scroll;
+}
+
+.turnos__main__table table .table__body__wrapper::-webkit-scrollbar {
+    display: none;
+} 
+
+.turnos__main__table table thead,
+.turnos__main__table table tbody {
+    display: block;
+    width: 100%;
+}
+
+.turnos__main__table table tbody td a {
+    color: white;
+    transition: .3s all;
+}
+
+.turnos__main__table table tbody td a:hover {
+    color: var(--main-blue);
+}
+
+.turnos__main__table table tbody td {
+    padding: 10px 0px 10px 0px;
+}
+
+.turnos__main__table table tbody td button:hover {
+    color: var(--main-blue);
+}
+
+.turnos__main__table.add__edit {
+    height: auto;
+    width: 40%;
+    padding-top: 10px;
+    padding-bottom: 40px;
+    transition: .3s all;
+}
+
+.turnos__main__table.add__edit.other__type {
+    height: 700px;
+}
+
+.turnos__main__table form, .turnos__main__table form label {
+    display: flex;
+    font-size: 16px;
+    flex-direction: column;
+}
+
+.turnos__main__table form hr {
+    color: white;
+}
+
+.turnos__main__table form textarea {
+    margin-top: 15px;
+    border-radius: 5px;
+}
+
+.turnos__main__table form label {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.turnos__main__table form label input,
+.turnos__main__table form label select
+{
+    margin-top: 15px;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+}
+
+.turnos__main__table form button {
+    margin-top: 15px;
+    padding: 10px;
+    padding-inline: 15px;
+    background-color: rgba(41, 156, 219, 0.7);
+    color: white;
+    border: none;
+    width: 100%;
+    border-radius: 5px;
+    transition: .3s all;
+}
+
+.turnos__main__table form button:hover {
+    background-color: rgba(41, 156, 219, 0.9);
+}
+
+/* Dispositivos pequeños (landscape phones, 576px and up) */
+@media (min-width: 470px) { 
+    .turnos__main__table {
+        width: 100%;
+        margin-right: 0px;
+    }
+
+    .turnos__container .cards__sections {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .turnos__container .cards__sections .counter__card {
+        width: 100%;
+        margin-top: 20px; 
+        margin-right: 0px;
+    }
+
+    .turnos__container .cards__sections .counter__card:nth-child(1) {
+        margin-top: 0px;
+    }
+
+    .turnos__main__table {
+        overflow-x: scroll;
+    }
+
+    .turnos__main__table.add__edit {
+        width: 100%;
+        
+    }
+
+    .turnos__main__table .add__button {
+        display: block;
+    }
+
+    .turnos__main__table > input {
+        margin-left: 0px;
+        width: 100%;
+    }
+}
+
+/* Dispositivos extra grandes (large desktops, 1200px y más) */
+@media (min-width: 1200px) { 
+    .turnos__container .cards__sections {
+        flex-wrap: nowrap;
+    }
+
+    .turnos__container .cards__sections .counter__card {
+        width: 25%;
+        margin-right: 20px;
+    }
+
+    .turnos__main__table {
+        width: 100%;
+        margin-right: 20px;
+    }
+
+    .turnos__container .cards__sections .counter__card {
+        margin-top: 0px;
+    }
+}

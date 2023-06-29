@@ -22,3 +22,103 @@ export async function loginHandler ({email, password}) {
         console.log(e)
     }
 }
+
+// Función para obtener todas las mascotas
+export async function getAllPets() {
+    try {
+        const response = await axios.get('/pets');
+        return response;
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+// Función para obtener una sola mascota
+export async function getSinglePet(id) {
+    try {
+        const response = await axios.get(`/pets/${id}`);
+        return response;
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+// Funcion para actualizar una mascota
+export async function updatePet(id, petData) {
+    try {
+        const response = await axios.put(`/pets/${id}`, petData);
+        return response;
+    } catch (e) {
+        console.log(e)
+    }
+}  
+
+// Función para crear una nueva mascota
+export async function createPet(petData) {
+    try {
+        const response = await axios.post('/pets', petData);
+        return response;
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+// Función para eliminar una mascota
+export async function deletePet(id) {
+    try {
+        const response = await axios.delete(`/pets/${id}`);
+        return response;
+    } catch (e) {
+        console.error(e);
+    }
+}
+
+// Función para obtener todas las citas
+export async function getAllAppointments() {
+    try {
+        const response = await axios.get('/appointments');
+        return response;
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+// Función para obtener una sola cita
+export async function getSingleAppointment(id) {
+    try {
+        const response = await axios.get(`/appointments/${id}`);
+        return response;
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+// Función para crear una nueva cita
+export async function createAppointment(appointmentData) {
+    try {
+        const response = await axios.post('/appointments', appointmentData);
+        return response;
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+// Función para actualizar una cita
+export async function updateAppointment(id, appointmentData) {
+    try {
+        const response = await axios.put(`/appointments/${id}`, appointmentData);
+        return response;
+    } catch (e) {
+        console.log(e);
+    }
+}  
+
+// Función para eliminar una cita
+export async function deleteAppointment(id) {
+    try {
+        const response = await axios.delete(`/appointments/${id}`);
+        return response;
+    } catch (e) {
+        console.error(e);
+    }
+}
